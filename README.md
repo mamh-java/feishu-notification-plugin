@@ -1,27 +1,36 @@
 # 飞书Jenkins消息通知插件
 
+该插件适用于使用"飞书"工作的小伙伴，在Jenkins项目构建时使用群机器人进行状态通知
+
+* 类似的插件有：
+
+* https://github.com/mamh-java/qy-wechat-notification-plugin
+
+* https://github.com/mamh-java/dingtalk-notification-plugin
+
+* https://github.com/mamh-java/feishu-notification-plugin
 
 
-This plugin allows sending message notification to your work group with feishu, 
-and help you understand the build result.
+这几个插件都经过我的修改，原版的我认为设计的不是特别的合理。
 
-[2.38](https://github.com/mamh-java/feishu-notification-plugin/tree/feishu-notification-2.38-for-jenkins-2.303.1)
+* 特别说明， 特别推荐在 流水线风格的job中来使用
 
 
-## How to use
-In order to support Jenkins notification configuration and Webhook address configuration, 
-you need to install the official Jenkins plugin
+当前插件版本号
 
-**1. Log in feishu，invite Jenkins CI Assistant(this is a chat bot) to join the group.**
+* [2.38](https://github.com/mamh-java/feishu-notification-plugin/tree/feishu-notification-2.38-for-jenkins-2.303.1)
 
-**2. add 自定义机器人指南 in the group, and get the Web Hook URL for receiving the web jobs status notification**
+
+
 
 可以参考飞书 官方文档： [feishu](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN?lang=zh-CN)
 
  ![](https://cdn.jsdelivr.net/gh/mamh-java/feishu-notification-plugin@feishu-notification-2.38-for-jenkins-2.303.1/static/4.png?raw=true)
 
 
-**3. Configure the Jenkins plugin**
+
+
+# Freestyle Job配置
 
 在自由分格的job中如何使用？ 选择 最后的  post-build 阶段 -> 添加 飞书消息通知 -> 配置 webhook url地址，配置消息内容
 
