@@ -119,21 +119,27 @@ public class FeishuNotifier extends Notifier {
             urlBuilder.append("console");
         }
         String consoleUrl = urlBuilder.toString();
-
-
-        content.append("<font color=\"info\">[" + projectName + "]</font>" + getStatus(result) + "\n");
-        content.append("构建用时：<font color=\"comment\">" + useTimeString + "</font>\n");
+        content.append("[feishu][" + projectName + "]" + getStatus(result));
+        content.append("\n");
+        content.append("构建用时：" + useTimeString + "\n");
         if (StringUtils.isNotEmpty(consoleUrl)) {
             content.append("[查看控制台](" + consoleUrl + ")");
         }
         content.append("\n");
         content.append(this.content);
+
         Map text = new HashMap<String, Object>();
         text.put("text", content.toString());
+
         Map data = new HashMap<String, Object>();
         data.put("msg_type", "text");
         data.put("content", text);
-
+        //        {
+        //            "msg_type": "text",
+        //                "content": {
+        //                    "text": "新更新提醒"
+        //                }
+        //        }
         String req = JSONObject.fromObject(data).toString();
         return req;
     }
@@ -161,17 +167,17 @@ public class FeishuNotifier extends Notifier {
                 "\uD83D\uDE0A", "\uD83D\uDE04", "\uD83D\uDE0E", "\uD83D\uDC4C", "\uD83D\uDC4D", "(o´ω`o)و", "(๑•̀ㅂ•́)و✧"
         };
         if (null != result && result.equals(Result.FAILURE)) {
-            return "<font color=\"warning\">失败!!!</font>\uD83D\uDE2D";
+            return "失败!!!\uD83D\uDE2D";
         } else if (null != result && result.equals(Result.ABORTED)) {
-            return "<font color=\"warning\">中断!!</font>\uD83D\uDE28";
+            return "中断!!\uD83D\uDE28";
         } else if (null != result && result.equals(Result.UNSTABLE)) {
-            return "<font color=\"warning\">异常!!</font>\uD83D\uDE41";
+            return "异常!!\uD83D\uDE41";
         } else if (null != result && result.equals(Result.SUCCESS)) {
             int max = successFaces.length - 1, min = 0;
             int ran = (int) (Math.random() * (max - min) + min);
-            return "<font color=\"info\">成功~</font>" + successFaces[ran];
+            return "成功~" + successFaces[ran];
         }
-        return "<font color=\"warning\">情况未知</font>";
+        return "情况未知";
     }
 
     private String getBuildUrl(AbstractBuild<?, ?> build) {
