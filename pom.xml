@@ -13,8 +13,8 @@
     <version>2.38-SNAPSHOT</version>
     <packaging>hpi</packaging>
 
-    <name>feishu Notification Plugin</name>
-    <description>feishu Jenkins Notification Plugin</description>
+    <name>Feishu Notification Plugin</name>
+    <description></description>
     <url>https://github.com/mamh-java/feishu-notification-plugin.git</url>
     <developers>
         <developer>
