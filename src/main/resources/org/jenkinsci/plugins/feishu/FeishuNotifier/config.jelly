@@ -7,11 +7,12 @@
     <f:entry title="Default Content" field="content" help="/plugin/feishu-notification/help-globalConfig-content.html">
         <f:textarea />
     </f:entry>
-
+    <f:advanced>
     <f:entry title="mentioned id" field="mentionedId" help="/plugin/feishu-notification/help-globalConfig-mentionedId.html">
         <f:textbox />
     </f:entry>
     <f:entry title="mentioned Mobile" field="mentionedMobile" help="/plugin/feishu-notification/help-globalConfig-mentionedMobile.html">
         <f:textbox />
     </f:entry>
+    </f:advanced>
 </j:jelly>
