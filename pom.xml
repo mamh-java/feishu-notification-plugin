@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+        <version>4.31</version>
+        <relativePath/>
+    </parent>
+    <artifactId>feishu-notification</artifactId>
+    <version>2.38-SNAPSHOT</version>
+    <packaging>hpi</packaging>
+
+    <name>feishu Notification Plugin</name>
+    <description>feishu Jenkins Notification Plugin</description>
+    <url>https://github.com/mamh-java/feishu-notification-plugin.git</url>
+    <developers>
+        <developer>
+            <id>bright</id>
+            <name>bright ma</name>
+            <email>bright.ma@blackshark.com</email>
+        </developer>
+    </developers>
+    <properties>
+        <jenkins.version>2.303.1</jenkins.version>
+        <java.level>8</java.level>
+    </properties>
+
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+
+
+    <scm>
+        <connection>scm:git:ssh://github.com/jenkinsci/lark-notifications-plugin.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/jenkinsci/lark-notifications-plugin.git</developerConnection>
+        <url>http://github.com/jenkinsci/lark-notifications-plugin</url>
+    </scm>
+
+    <repositories>
+        <repository>
+            <id>repo.jenkins-ci.org</id>
+            <url>https://repo.jenkins-ci.org/public/</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>repo.jenkins-ci.org</id>
+            <url>https://repo.jenkins-ci.org/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins.workflow</groupId>
+            <artifactId>workflow-job</artifactId>
+            <version>2.42</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>structs</artifactId>
+            <version>1.24</version>
+        </dependency>
+        <dependency>
+            <groupId>com.arronlong</groupId>
+            <artifactId>httpclientutil</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+    </dependencies>
+
+</project>
