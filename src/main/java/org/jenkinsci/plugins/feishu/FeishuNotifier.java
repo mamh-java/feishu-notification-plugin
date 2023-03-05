@@ -26,7 +26,7 @@ import java.util.Map;
 
 
 public class FeishuNotifier extends Notifier {
-    private Logger logger = LoggerFactory.getLogger(FeishuNotifier.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(FeishuNotifier.class);
     private String webhookUrl;
 
     private String mentionedId;
@@ -195,11 +195,6 @@ public class FeishuNotifier extends Notifier {
     private String getDefaultURL() {
         Jenkins instance = Jenkins.get();
         return instance.getRootUrl() != null ? instance.getRootUrl() : "";
-    }
-
-    @Override
-    public DescriptorImpl getDescriptor() {
-        return (DescriptorImpl) super.getDescriptor();
     }
 
     @Extension
