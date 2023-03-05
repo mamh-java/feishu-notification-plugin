@@ -125,7 +125,7 @@ public class FeishuNotifier extends Notifier {
         if (StringUtils.isNotEmpty(consoleUrl)) {
             content.append("[查看控制台](" + consoleUrl + ")");
         }
-        content.append("\n");
+        content.append("\n\n");
         content.append(this.content);
 
         Map text = new HashMap<String, Object>();
