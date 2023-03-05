@@ -1,5 +1,7 @@
 # 飞书Jenkins消息通知插件
 
+
+
 This plugin allows sending message notification to your work group with feishu, 
 and help you understand the build result.
 
@@ -37,11 +39,8 @@ you need to install the official Jenkins plugin
 第一行是标题，一个关键字 feishu(关键字 是自定义机器人那里 安全设置 那里设置的关键字，这里写死 )， job name 和 成功 失败状态
 第二行是 构建用时
 第三行是 构建链接
-
-
-[feishu][test_free]失败!!!😭
-构建用时：46 ms
-[查看控制台](http://feishu-notification-plugin/job/test_free/5/console)
+第四行是  空白行，主要和下面消息主体内容 分割开的。
+第五行 开始是消息主体。消息主体里面不能 解析 ${BUILD_URL} 这样的环境变量。
 
 ```
 
@@ -87,5 +86,15 @@ BUILD_URL = ${BUILD_URL}
 
  ![](https://cdn.jsdelivr.net/gh/mamh-java/feishu-notification-plugin@feishu-notification-2.38-for-jenkins-2.303.1/static/5.2.png?raw=true)
 
+消息就会发送到特定的群里面， 流水线风格job中消息内容完全是可以自定义的，
+```
+特别注意 关键字 要和 自定义机器人那里 安全设置 那里设置的关键字 一致！！！
 
+消息主体里面可以 解析 ${BUILD_URL} 这样的环境变量。
+
+可以按照 消息标题 + 空行 + 消息主体内容 这样自定义通知内容
+
+也可以在 post 阶段 里面的 failure 或者 success 代码块里面 发送不同内容的消息通知
+
+```
 
