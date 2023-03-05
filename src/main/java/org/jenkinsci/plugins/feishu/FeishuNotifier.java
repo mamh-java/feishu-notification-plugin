@@ -217,7 +217,7 @@ public class FeishuNotifier extends Notifier {
 
         @Override
         public String getDisplayName() {
-            return "feishu notification plugin";
+            return "飞书消息通知";
         }
 
         @Override
