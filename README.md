@@ -22,9 +22,9 @@ you need to install the official Jenkins plugin
  -- add post-build steps
  -- select  飞书消息通知   configuration
 
- ![](https://cdn.jsdelivr.net/gh/mamh-java/feishu-notification-plugin@feishu-notification-2.38-for-jenkins-2.303.1/static/1.png)
+![](https://cdn.jsdelivr.net/gh/mamh-java/feishu-notification-plugin@feishu-notification-2.38-for-jenkins-2.303.1/static/1.png)
 
- ![](https://cdn.jsdelivr.net/gh/mamh-java/feishu-notification-plugin@feishu-notification-2.38-for-jenkins-2.303.1/static/2.png?raw=true)
+![](https://cdn.jsdelivr.net/gh/mamh-java/feishu-notification-plugin@feishu-notification-2.38-for-jenkins-2.303.1/static/2.png?raw=true)
 
  - Bot sends the build result to the specified group, 
    clicks the card to the applet to view the build
@@ -66,5 +66,4 @@ BUILD_URL = ${BUILD_URL}
 ![](https://cdn.jsdelivr.net/gh/mamh-java/feishu-notification-plugin@feishu-notification-2.38-for-jenkins-2.303.1/static/5.2.png?raw=true)
 
 
-## License
-MIT
+
