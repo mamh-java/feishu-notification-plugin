@@ -44,12 +44,18 @@ public class RobotConfigModel {
     /**
      * Security key used for authentication.
      */
+    @SuppressWarnings("lgtm[jenkins/plaintext-storage]")
     private String keys;
 
     /**
      * Secret used for authentication.
      */
     private String sign;
+
+    /**
+     * Secret used for authentication.
+     */
+    private Boolean noSsl;
 
     /**
      * Creates a RobotConfigModel object based on the LarkRobotConfig object and proxy selector.
@@ -79,6 +85,9 @@ public class RobotConfigModel {
                             break;
                         case SECRET:
                             meta.setSign(config.getValue());
+                            break;
+                        case NO_SSL:
+                            meta.setNoSsl(Boolean.parseBoolean(config.getValue()));
                             break;
                         default:
                             throw new IllegalArgumentException("Invalid security policy type: " + type);
